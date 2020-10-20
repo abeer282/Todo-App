@@ -5,7 +5,7 @@
       @keyup.esc="clearMessage"
       @keyup.enter="alertMessage"/>
     <button @click="clearMessage">Clear</button>
-      <h5> {{message}} </h5>
+      <h5 class="borderGreen" v-show="message.length"> {{message}} </h5>
   </q-page>
 </template>
 
@@ -37,3 +37,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.borderGreen{
+  border: 5px solid green;
+}
+</style>
