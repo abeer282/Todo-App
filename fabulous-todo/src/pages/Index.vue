@@ -4,8 +4,18 @@
       v-model="message" 
       @keyup.esc="clearMessage"
       @keyup.enter="alertMessage"/>
+
+
     <button @click="clearMessage">Clear</button>
-      <h5 class="borderGreen" v-show="message.length"> {{message}} </h5>
+
+
+      <h5 
+        v-if="message.length"
+        class="borderGreen"> {{message}} </h5>
+
+      <h6
+        v-else
+        class="borderRed">NO MSG</h6>
   </q-page>
 </template>
 
@@ -39,7 +49,10 @@ export default {
 </script>
 
 <style>
-.borderGreen{
-  border: 5px solid green;
-}
+  .borderGreen{
+    border: 5px solid green;
+  }
+  .borderRed{
+    border: 5px solid red;
+  }
 </style>
