@@ -1,5 +1,12 @@
 <template>
   <q-page >
+    <button 
+        style="position:abslute; right: 10px;"
+        @click="counter++">
+      {{counter}}
+
+    </button>
+    <br><br><br>
     <input
       v-model="message" 
       @keyup.esc="clearMessage"
@@ -16,6 +23,9 @@
       <h6
         v-else
         class="borderRed">NO MSG</h6>
+
+        <hr>
+        <p>Uppercase msg: {{messageUppercase}}</p>
   </q-page>
 </template>
 
@@ -25,13 +35,22 @@
 export default {
   data(){
     return{
-      message : 'I love VUE.JS!'
+      message : 'I love VUE.JS!',
+      counter: 0
     }
+  },
+  computed:{
+    messageUppercase(){
+       console.log('stam')
+       return this.message.toUpperCase()
+     }
+
   },
   methods: {
      clearMessage(){
        this.message=''
      },
+     
     //  handleKeyup(e){
     //    //logging event object
     //    console.log(e)
