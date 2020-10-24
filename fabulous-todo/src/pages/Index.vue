@@ -1,9 +1,10 @@
 <template>
   <q-page>
     <ul>
-      <li v-for="task in tasks"> 
-          <div> {{task.name}} </div>
+      <li v-for="(task,index) in tasks"> 
+          <div> {{task.name}}  {{index}}</div>
           <small>{{task.dueDate}} @ {{task.dueTime}} </small>
+          <button @click="deleteTask(index)">x</button>
       </li>
     </ul>
   </q-page>
@@ -35,6 +36,11 @@ export default {
           dueTime: '20:20'
         }
      ]
+   }
+ },
+ methods:{
+   deleteTask(index){
+     this.tasks.splice(index,1)
    }
  }
     
