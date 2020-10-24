@@ -1,7 +1,10 @@
 <template>
   <q-page>
     <ul>
-      <task v-for="(task,index) in tasks"> </task>
+      <task 
+          v-for = "(task,index) in tasks"
+          :task = "task"
+          :index = "index"> </task>
     </ul>
   </q-page>
 </template>
@@ -43,7 +46,7 @@ export default {
  },
  components:{
    //'task' : Task
-   'task' : require('components/Task.vue')
+   'task' : require('components/Task.vue').default
  }
     
 }
