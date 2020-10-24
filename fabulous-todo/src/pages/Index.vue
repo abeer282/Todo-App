@@ -25,7 +25,11 @@
         class="borderRed">NO MSG</h6>
 
         <hr>
+
+
         <p>Uppercase msg: {{messageUppercase}}</p>
+
+        <p>Lowercase msg: {{message | messageLowercase}}</p>
   </q-page>
 </template>
 
@@ -40,6 +44,8 @@ export default {
     }
   },
   computed:{
+    //this function considered as static, when calling it we do not need the ()
+    //has access to everything in the exported, more powerful than filters
     messageUppercase(){
        console.log('stam')
        return this.message.toUpperCase()
@@ -63,6 +69,12 @@ export default {
      alertMessage(){
        alert(this.message)
      }
+  },
+  filters:{
+    //comparing to computed properties this function has no full access and we need to specify the params
+    messageLowercase(val){
+      return val.toLowerCase()
+    }
   }
 }
 </script>
