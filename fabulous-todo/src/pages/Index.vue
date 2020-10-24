@@ -8,7 +8,7 @@
       v-model="message"
       @keyup.esc="clearMessage"
       @keyup.enter="alertMessage"
-      v-autofocus
+      v-focus
       v-bind:class="{ error: message.length > 15 }"
     />
     <br /><br /><br />
@@ -17,7 +17,6 @@
       v-model="message"
       @keyup.esc="clearMessage"
       @keyup.enter="alertMessage"
-      v-autofocus
       :style="errorStyle"
     />
     <button @click="clearMessage">Clear</button>
@@ -84,15 +83,42 @@ export default {
     //comparing to computed properties this function has no full access and we need to specify the params
     messageLowercase(val) {
       return val.toLowerCase();
-    },
-    directives: {
-      autofocus: {
-        inserted() {
-          console.log("input inserted");
-        },
-      },
-    },
+    }
   },
+  directives: {
+    focus: {
+      // directive definition
+      inserted: function (el) {
+        el.focus()
+      }
+    }
+  },
+  beforeCreate(){
+      console.log("before create")
+  },
+  created(){
+      console.log("created")
+  },
+  beforeMount(){
+      console.log("before mount")
+  },
+  mounted(){
+      console.log("mounted")
+  },
+  beforeUpdate(){
+      console.log("before update")
+  },
+  updated(){
+      console.log("updated")
+  },
+  beforeDestroy(){
+      console.log("before destroy")
+  },
+  destroyed(){
+      console.log("destroyed")
+  },
+
+  
 };
 </script>
 
