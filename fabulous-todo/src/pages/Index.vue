@@ -4,7 +4,7 @@
       <task 
           v-for = "(task,index) in tasks"
           :task = "task"
-          :index = "index"> </task>
+          :index = "index"> {{task.name}}</task>
     </ul>
   </q-page>
 </template>
