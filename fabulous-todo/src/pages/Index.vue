@@ -1,7 +1,10 @@
 <template>
   <q-page>
     <ul>
-      <li v-for="task in tasks"> {{task}}</li>
+      <li v-for="task in tasks"> 
+          <div> {{task.name}} </div>
+          <small>{{task.dueDate}} @ {{task.dueTime}} </small>
+      </li>
     </ul>
   </q-page>
 </template>
