@@ -1,11 +1,10 @@
 <template>
   <q-page>
-
+    <p> settings page </p>
   </q-page>
 </template>
 
 <script>
-//import Task from 'components/Task.vue'
 
 export default {
     
