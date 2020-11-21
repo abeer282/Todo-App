@@ -1,5 +1,5 @@
 <template>
-  <q-page>
+  <q-page class="q-pa-md">
     <q-list bordered>
 
       <q-item 
