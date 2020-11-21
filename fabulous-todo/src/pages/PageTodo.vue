@@ -62,11 +62,10 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   computed: {
-    tasks() {
-        return this.$store.getters['tasks/tasks']
-    }
+    ...mapGetters('tasks', ['tasks']) //which module and which getter
   }
 };
 </script>
