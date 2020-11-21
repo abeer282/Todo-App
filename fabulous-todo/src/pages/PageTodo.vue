@@ -18,6 +18,35 @@
         <q-item-section>
           <q-item-label>{{ task.name }}</q-item-label>
         </q-item-section>
+
+        <q-item-section side>
+          <div class="row">
+            <div class="colum justify-center">
+              <q-icon 
+                class="q-mr-xs"
+                name="event" 
+                size="15px"
+              />
+            </div>
+
+            <div class="column">
+              <q-item-label 
+                caption
+                class="row justify-end"
+              >
+                  {{ task.dueDate }}
+              </q-item-label>
+              <q-item-label 
+                caption
+                class="row justify-end"
+              >
+                  <small> {{ task.dueTime }} </small>
+              </q-item-label>
+            </div>
+          </div>
+        </q-item-section>
+
+
       </q-item>
       
     </q-list>
@@ -32,17 +61,23 @@ export default {
         {
           id: 1,
           name: "Go to shop",
-          completed: false
+          completed: false,
+          dueDate: '2020/12/02',
+          dueTime: '12:00'
         },
         {
           id: 2,
           name: "Wash dishes",
-          completed: false
+          completed: false,
+          dueDate: '2020/12/05',
+          dueTime: '12:00'
         },
         {
           id: 3,
           name: "Watch TV",
-          completed: false
+          completed: false,
+          dueDate: '2020/12/07',
+          dueTime: '12:00'
         }
       ]
     };
