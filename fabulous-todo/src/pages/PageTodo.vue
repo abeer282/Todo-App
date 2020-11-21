@@ -1,6 +1,9 @@
 <template>
   <q-page class="q-pa-md">
-    <q-list bordered>
+    <q-list 
+      borderedy
+      separator
+    >
 
       <q-item 
         v-for="task in tasks"
@@ -8,6 +11,7 @@
         @click="task.completed=!task.completed"
         clickable
         v-ripple
+        :class="!task.completed? 'bg-amber-2' : 'bg-green-2'"
       >
         <q-item-section side top>
           <q-checkbox 
@@ -15,7 +19,11 @@
           />
         </q-item-section>
 
-        <q-item-section>
+        <q-item-section
+          :class="{
+            'cross-text' : task.completed
+          }"
+        >
           <q-item-label>{{ task.name }}</q-item-label>
         </q-item-section>
 
