@@ -35,6 +35,9 @@ const actions = {
 
 const getters = {
     //methods that get data from state
+    tasks: (state) => {
+        return state.tasks
+    }
 }
 
 export default {
