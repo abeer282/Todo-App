@@ -63,32 +63,10 @@
 
 <script>
 export default {
-  data() {
-    return {
-      tasks: [
-        {
-          id: 1,
-          name: "Go to shop",
-          completed: false,
-          dueDate: '2020/12/02',
-          dueTime: '12:00'
-        },
-        {
-          id: 2,
-          name: "Wash dishes",
-          completed: false,
-          dueDate: '2020/12/05',
-          dueTime: '12:00'
-        },
-        {
-          id: 3,
-          name: "Watch TV",
-          completed: false,
-          dueDate: '2020/12/07',
-          dueTime: '12:00'
-        }
-      ]
-    };
+  computed: {
+    tasks() {
+        return this.$store.getters['tasks/tasks']
+    }
   }
 };
 </script>
