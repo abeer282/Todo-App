@@ -1,6 +1,28 @@
 const state = {
     //all data will go here
-    tasks: [
+    tasks: {
+        'ID1' : {
+            name: "Go to shop",
+            completed: false,
+            dueDate: '2020/12/02',
+            dueTime: '12:00'
+        },
+        'ID2' : {
+            name: "Wash dishes",
+            completed: false,
+            dueDate: '2020/12/05',
+            dueTime: '12:00'
+        },
+        'ID3' : {
+            name: "Watch TV",
+            completed: false,
+            dueDate: '2020/12/07',
+            dueTime: '12:00'
+        }
+    }
+
+
+    /*tasks: [
         {
           id: 1,
           name: "Go to shop",
@@ -22,7 +44,7 @@ const state = {
           dueDate: '2020/12/07',
           dueTime: '12:00'
         }
-      ]
+      ]*/
 }
 
 const mutations = {
