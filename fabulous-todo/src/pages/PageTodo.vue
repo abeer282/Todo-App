@@ -4,7 +4,9 @@
 
       <q-item 
         v-for="task in tasks"
-        :hey="task.id"
+        :key="task.id"
+        @click="task.completed=!task.completed"
+        clickable
         v-ripple
       >
         <q-item-section side top>
