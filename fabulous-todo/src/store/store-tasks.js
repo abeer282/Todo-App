@@ -1,3 +1,5 @@
+import Vue from 'vue'
+
 const state = {
     //all data will go here
     tasks: {
@@ -49,10 +51,25 @@ const state = {
 
 const mutations = {
     //methods that manipulate data in state , not async
+    updateTask( state, payload){
+        Object.assign(state.tasks[payload.id], payload.updates)
+    },
+    deleteTask( state, id){
+        Vue.delete(state.tasks, id)
+        //Object.assign(state.tasks[payload.id], payload.updates)
+    }
 }
 
 const actions = {
     //methods that could be async, can call a server then pass to mutation 
+    updateTask({ commit }, payload){
+        console.log('task updated! - action')
+        console.log('payload: ', payload);
+        commit('updateTask', payload)
+    },
+    deleteTask({ commit }, id){
+        commit('deleteTask', id)
+    }
 }
 
 const getters = {
