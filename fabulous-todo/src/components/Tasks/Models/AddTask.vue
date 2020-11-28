@@ -12,6 +12,8 @@
       <q-card-section class="q-pt-none">
         <div class="q-mb-sm">
           <q-input
+            autofocus
+            clearable
             outlined
             ref="name"
             v-model="taskToSubmit.name"
@@ -23,6 +25,7 @@
         <div class="q-mb-sm">
           <q-input 
             outlined 
+            clearable
             v-model="taskToSubmit.dueDate" 
             label="Due Date"
           >
@@ -33,14 +36,24 @@
                   transition-show="scale"
                   transition-hide="scale"
                 >
-                  <q-date v-model="taskToSubmit.dueDate"> </q-date>
+                  <q-date v-model="taskToSubmit.dueDate"> 
+                    <div class="row items-center justify-end">
+                      <q-btn v-close-popup label="Close" color="primary" flat />
+                    </div>
+                  </q-date>
                 </q-popup-proxy>
               </q-icon>
             </template>
           </q-input>
         </div>
         <div class="q-mb-sm">
-          <q-input outlined v-model="taskToSubmit.dueTime" label="Due Time">
+          <q-input 
+            outlined 
+            clearable
+            v-model="taskToSubmit.dueTime" 
+            label="Due Time"
+            v-if="taskToSubmit.dueDate"
+          >
             <template v-slot:append>
               <q-icon name="access_time" class="cursor-pointer">
                 <q-popup-proxy transition-show="scale" transition-hide="scale">

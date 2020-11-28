@@ -1,7 +1,7 @@
 <template>
   <q-page class="q-pa-md">
     <q-list 
-      borderedy
+      bordered
       separator
     >
       <task

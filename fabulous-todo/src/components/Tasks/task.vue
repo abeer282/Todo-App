@@ -25,7 +25,10 @@
       <q-item-label>{{ task.name }}</q-item-label>
     </q-item-section>
 
-    <q-item-section side>
+    <q-item-section 
+      side
+      v-if="task.dueDate"
+    >
       <div class="row">
         <div class="colum justify-center">
           <q-icon class="q-mr-xs" name="event" size="15px" />
