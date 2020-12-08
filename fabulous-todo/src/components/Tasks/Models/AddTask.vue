@@ -1,10 +1,6 @@
 <template>
-  <q-card>
-    <q-card-section class="row">
-      <div class="text-h6">Add Task</div>
-      <q-space />
-      <q-btn v-close-popup flat dense round icon="close" />
-    </q-card-section>
+   <q-card>
+ <model-header>Add Task</model-header>
 
     <q-form
       @submit.prevent="submitForm"
@@ -107,6 +103,9 @@ export default {
       this.addTask(this.taskToSubmit)
       this.$emit('close')
     }
+  },
+  components: {
+    'model-header' : require('components/Tasks/Models/shared/ModelHeader.vue').default
   }
 };
 </script>
